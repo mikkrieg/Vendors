@@ -14,6 +14,7 @@ namespace Pierre.Models
         {
             Name = name;
             Description = description;
+            _instances.Add(this);
             Id = _instances.Count;
             Orders = new List<Order>{};
         }
@@ -26,6 +27,11 @@ namespace Pierre.Models
         public static void ClearAll()
         {
             _instances.Clear();
+        }
+
+        public static Vendor Find(int id)
+        {
+            return _instances[id - 1];
         }
     }
 }
