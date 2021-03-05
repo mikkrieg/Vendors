@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Pierre.Models;
 using System.Collections.Generic;
+using System;
 
 namespace Pierre.Controllers
 {
@@ -17,6 +18,14 @@ namespace Pierre.Controllers
         public ActionResult New()
         {
             return View();
+        }
+
+        [HttpGet("/vendors/{id}")]
+        public ActionResult Show(int id)
+        {
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            Vendor foundVendor = Vendor.Find(id);
+            return View(foundVendor);
         }
 
         [HttpPost("/vendors")]

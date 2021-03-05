@@ -1,0 +1,10 @@
+@using Pierre.Models;
+@{
+  Layout = "_Layout";
+}
+<h1>@Model.Name</h1>
+<p>@Model.Description</p>
+
+<a href="/vendors"><button class="btn btn-dark">Back to vendors</button></a>
+<a href="/vendors/@Model.Id/orders/new"><button class="btn btn-dark">Create order</button></a>
+<a href=""><button class="btn btn-dark">Delete orders</button></a>
