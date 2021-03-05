@@ -55,6 +55,16 @@ namespace Pierre.Tests
         }
 
         [TestMethod]
+        public void GetId_ReturnsVendorId_Int()
+        {
+            string name = "Test Vendor";
+            string description = "Test Description";
+            Vendor newVendor = new Vendor(name, description);
+            int result = newVendor.Id;
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
         public void Find_FindsCorrectVendor_Vendor()
         {
             string name1 = "La Provence";
@@ -66,7 +76,7 @@ namespace Pierre.Tests
             Assert.AreEqual(newVendor2, result);
         }
 
-        
+
 
     }
 }
