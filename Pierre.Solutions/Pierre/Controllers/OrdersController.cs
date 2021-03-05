@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Pierre.Models;
 using System.Collections.Generic;
+using System;
 
 namespace Pierre.Controllers
 {
@@ -13,12 +14,12 @@ namespace Pierre.Controllers
             return View(vendor);
         }
 
-        // [HttpPost("/orders")]
-        // public ActionResult Create(string orderTitle, string orderDescription, int orderPrice, string orderDate)
-        // {
-        //     Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
-        //     return RedirectToAction("Index");
-        // }
+        [HttpPost("/orders")]
+        public ActionResult Create(string orderTitle, string orderDescription, int orderPrice, string orderDate)
+        {
+            Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+            return RedirectToAction("Index");
+        }
 
         [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
         public ActionResult Show(int vendorId, int orderId)

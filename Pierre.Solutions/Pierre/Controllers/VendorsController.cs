@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Pierre.Models;
 using System.Collections.Generic;
-using System;
 
 namespace Pierre.Controllers
 {
@@ -28,7 +27,6 @@ namespace Pierre.Controllers
             List<Order> vendorOrders = chosenVendor.Orders;
             model.Add("vendor", chosenVendor);
             model.Add("orders", vendorOrders);
-            Console.WriteLine(model["vendor"]);
             return View(model);
         }
 
@@ -40,15 +38,15 @@ namespace Pierre.Controllers
         }
 
         [HttpPost("/vendors/{vendorId}/orders")]
-        public ActionResult Show(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
+        public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
             Vendor foundVendor = Vendor.Find(vendorId);
             Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
             foundVendor.AddOrder(newOrder);
             List<Order> vendorOrders = foundVendor.Orders;
-            model.Add("vendor", foundVendor);
             model.Add("orders", vendorOrders);
+            model.Add("vendor", foundVendor);
             return View("Show", model);
         }
 
