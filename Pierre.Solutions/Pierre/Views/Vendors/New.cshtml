@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+<link rel="stylesheet" type="text/css" href="~/css/vendorNew.css">
+
+<form action="/vendors" method="post" id="vendorForm">
+    <label for="vendorName">Enter a Vendor Name:</label>
+    <input id="vendorName" name="vendorName" type="text">
+    <button class="btn btn-dark" type="submit">Create Vendor</button>
+</form>
+<label for="vendorDescription">Enter a description:</label>
+<textarea name="vendorDescription" form="vendorForm"></textarea>
+<p><a href="/vendors">Back to Vendors</a></p>

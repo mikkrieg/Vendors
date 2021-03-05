@@ -1,0 +1,20 @@
+@using Pierre.Models;
+@{
+  Layout = "_Layout";
+}
+<link rel="stylesheet" type="text/css" href="~/css/vendorIndex.css">
+
+<h1 class="text-center">Vendors</h1>
+
+@if (Model.Count == 0)
+{
+    <h3>No vendors have been created yet</h3>
+}
+
+@foreach (Vendor vendor in Model)
+{
+    <li>@vendor.Id <a href="/vendor/@vendor.Id">@vendor.Name</a></li>
+}
+
+<a href="/vendors/new"><button class="btn btn-dark">Add new vendor</button></a>
+<a href=""><button class="btn btn-dark">Delete all</button></a>
