@@ -1,0 +1,10 @@
+@using Pierre.Models;
+@{
+  Layout = "_Layout";
+}
+
+<h1>@Model["order"].Title</h1>
+<p>Description: @Model["order"].Description</p>
+<p>Price: @Model["order"].Price</p>
+<p>Date: @Model["order"].Date</p>
+<h3>Vendor: @Model["vendor"].Name</h3>

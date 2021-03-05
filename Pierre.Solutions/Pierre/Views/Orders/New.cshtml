@@ -3,7 +3,7 @@
   Layout = "_Layout";
 }
 
-<form action="/vendors/@Model.Id" method="post" id="orderForm">
+<form action="/vendors/@Model.Id/orders" method="post" id="orderForm">
     <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
     <label for="orderTitle">Enter a title: </label>
     <input type="text" name="orderTitle" id="orderTitle">
