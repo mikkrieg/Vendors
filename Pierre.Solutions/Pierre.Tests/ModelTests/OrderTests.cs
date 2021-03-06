@@ -99,6 +99,25 @@ namespace Pierre.Tests
         }
 
         [TestMethod]
+        public void ClearAll_ClearsAllOrders_OrderList()
+        {
+            string title1 = "Test Order";
+            string description1 = "Test Description";
+            int price1 = 0;
+            string date1 = "Test Date2";
+            string title2 = "Test Order2";
+            string description2 = "Test Description2";
+            int price2 = 0;
+            string date2 = "Test Date2";
+            Order newOrder1 = new Order(title1, description1, price1, date1);
+            Order newOrder2 = new Order(title2, description2, price2, date2);
+            List<Order> newList = new List<Order>{};
+            Order.ClearAll();
+            List<Order> result = Order.GetAll();
+            CollectionAssert.AreEqual(newList, result);
+        }
+
+        [TestMethod]
         public void Find_FindsCorrectOrder_Order()
         {
             string title1 = "Test Order";

@@ -55,6 +55,20 @@ namespace Pierre.Tests
         }
 
         [TestMethod]
+        public void ClearAll_ClearsAllVendors_VendorList()
+        {
+            string name1 = "La Provence";
+            string name2 = "Mcdonalds";
+            string description = "Test description";
+            Vendor newVendor1 = new Vendor(name1, description);
+            Vendor newVendor2 = new Vendor(name2, description);
+            List<Vendor> newList = new List<Vendor>{};
+            Vendor.ClearAll();
+            List<Vendor> result = Vendor.GetAll();
+            CollectionAssert.AreEqual(newList, result);
+        }
+
+        [TestMethod]
         public void GetId_ReturnsVendorId_Int()
         {
             string name = "Test Vendor";
