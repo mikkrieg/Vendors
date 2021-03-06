@@ -6,15 +6,15 @@
 <form action="/vendors/@Model.Id/orders" method="post" id="orderForm">
     <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
     <label for="orderTitle">Enter a title: </label>
-    <input type="text" name="orderTitle" id="orderTitle">
+    <input type="text" name="orderTitle" id="orderTitle" required>
     <label for="orderPrice">Enter a price: </label>
-    <input type="number" name="orderPrice" id="orderPrice" min="0">
+    <input type="number" name="orderPrice" id="orderPrice" min="0" required>
     <label for="orderDate">Enter a date: </label>
-    <input type="date" name="orderDate" id="orderDate">
+    <input type="date" name="orderDate" id="orderDate" required>
     <button type="submit" class="btn btn-dark">Create</button>
 </form>
 
 <label for="orderDescription">Order Description: </label>
-<textarea name="orderDescription" form="orderForm"></textarea>
+<textarea name="orderDescription" form="orderForm" required></textarea>
 <a href="/vendors"><button class="btn btn-dark">Back to Vendors</button></a>
 <a href="/vendors/@Model.Id"><button class="btn btn-dark">Back to Vendor</button>

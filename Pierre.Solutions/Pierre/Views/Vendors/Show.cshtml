@@ -4,7 +4,15 @@
 }
 <h1>@Model["vendor"].Name</h1>
 <p>@Model["vendor"].Description</p>
-<h3>Here are the orders for this vendor<h3>
+
+@if(@Model["orders"].Count == 0)
+{
+  <h3>No orders have been by this vendor yet</h3>
+}
+else 
+{
+  <h3>Here are the orders for this vendor:</h3>
+}
 @foreach (Order order in @Model["orders"])
 {
   <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>

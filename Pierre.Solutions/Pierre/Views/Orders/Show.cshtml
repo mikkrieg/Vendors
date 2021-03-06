@@ -5,8 +5,8 @@
 
 <h1>@Model["order"].Title</h1>
 <p>Description: @Model["order"].Description</p>
-<p>Price: @Model["order"].Price</p>
+<p>Price: $@Model["order"].Price</p>
 <p>Date: @Model["order"].Date</p>
-<h3>Vendor: @Model["vendor"].Name</h3>
+<p>Vendor: @Model["vendor"].Name</p>
 
-<a href='/vendor/@Model["vendor"].Id'><button>Back to vendor</button></a>
+<a href='/vendors/@Model["vendor"].Id'><button>Back to vendor</button></a>
