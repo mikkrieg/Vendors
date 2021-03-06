@@ -8,13 +8,16 @@
 
 ## Technologies Used
 
+* _HTML_
+* _CSS_
+* _Bootstrap_
 * _C#_
 * _.NET_
 * _Razor_
 
 ## Description
 
-__
+_This program is meant for an imaginary client named Pierre. He owns a business that provides products to many vendors and he wanted a program that allows him to record vendors and any orders that they may send to him. This program features C#, .NET and Razor to create dynamic pages. It uses the MVC pattern to display webpages and follows RESTful routing practices. Pierre or another user is able to create a list of vendors, select individual vendors, add a list of orders to those vendors, and select those orders to view details about them. All data is stored on RAM and not a database so any inputted information inputted will disappear on server refresh._
 
 ## Setup/Installation Requirements
 
